@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container-fluid">
+  <div class="row">
+  <div class="col-3">
+  </div>
+  <div class="col-6">
+    <div class="card mt-5">
+      <div class="card-body">
+        <h3><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{ postagem.titulo }}</font></font></h3>
+        <p><i class="fa fa-calendar"></i> <i><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{postagem.data_criacao}}</font></font></i></p>
+        <p><i class="fa fa-user"></i> <b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Autor:</font></font></b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> {{postagem.autor.username}}</font></font></p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+        {% if postagem.data_publicacao %}
+        
+          </font></font><p><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Dados de publicação:</font></font></b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> {{postagem.data_publicacao}}</font></font></p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+
+        {% endif %}
+        
+        </font></font><hr>
+        <p class="card-text"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{ postagem.texto|linebreaksbr }}</font></font></p>
+      </div>
+    </div>
+  </div>
+  <div class="col-3">
+  </div>
+
+  </div>
+</div>
+
+{% endblock %}
